@@ -4,7 +4,6 @@ import './App.css';
 import FilterView from './components/FilterView/FilterView';
 import logo from './logo.svg';
 import { mockFilters } from './mock/MockFilters';
-import store from './store';
 
 class App extends React.Component {
   public render() {
