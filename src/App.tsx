@@ -2,10 +2,9 @@ import * as React from 'react';
 import './App.css';
 
 import FilterView from './components/FilterView/FilterView';
-import ProductList from './components/ProductList/ProductList';
+import { VisibleProductList } from './containers/VisibleProductList';
 import logo from './logo.svg';
 import { mockFilters } from './mock/MockFilters';
-import { mockCatalog } from './mock/MockProducts';
 
 class App extends React.Component {
   public render() {
@@ -19,13 +18,7 @@ class App extends React.Component {
           <FilterView 
             filters={mockFilters} />
           <div className="App-catalog">
-          {
-            mockCatalog.map(pc => 
-              <ProductList
-                key={pc.id}
-                productCategory={pc} />
-            )
-          }
+            <VisibleProductList />
           </div>
         </div>
       </div>

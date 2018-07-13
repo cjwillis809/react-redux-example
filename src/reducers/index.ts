@@ -7,7 +7,7 @@ export interface State {
 }
 
 export const initialState: State = {
-    categoryFilter: filterState.initialState,
+    categoryFilter: filterState.initialState
 }
 
 export const reducer = combineReducers<State>({

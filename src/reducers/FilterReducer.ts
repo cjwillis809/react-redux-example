@@ -5,7 +5,7 @@ export interface FilterState {
 }
 
 export const initialState: FilterState = {
-    categoryFilter: ''
+    categoryFilter: 'All'
 }
 
 export function reducer(state: FilterState = initialState, action: Action) {
