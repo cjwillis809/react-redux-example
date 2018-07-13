@@ -1,7 +1,10 @@
 import * as React from 'react';
 import './App.css';
 
+import FilterView from './components/FilterView/FilterView';
 import logo from './logo.svg';
+import { mockFilters } from './mock/MockFilters';
+import store from './store';
 
 class App extends React.Component {
   public render() {
@@ -14,6 +17,8 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <FilterView 
+          filters={mockFilters} />
       </div>
     );
   }

@@ -1,0 +1,20 @@
+.filter-option-content {
+    display: flex;
+    justify-content: space-between;
+}
+.filter-option-divider {
+    height: 1px;
+    border: 0;
+    border-top: 2px solid rgb(199, 202, 202);
+    margin: 1em 0;
+    padding: 0;
+}
+
+.filter-radio-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-title {
+    text-transform: uppercase;
+}

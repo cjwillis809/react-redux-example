@@ -1,0 +1,19 @@
+.filter-view {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 350px;
+}
+
+.filter-divider {
+    height: 2px;
+    font-weight: bold;
+    border: 0;
+    border-top: 2px solid #000;
+    padding: 0;
+}
+
+.filter-option-list {
+    display: flex;
+    flex-direction: column;
+}
