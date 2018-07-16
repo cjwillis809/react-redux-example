@@ -7,25 +7,44 @@ interface Props {
     filterCategory: FilterCategory
 }
 
-const FilterOptionView = (props: Props) => {
-    return (
-        <div className="filter-option-view">
-            <div className="filter-option-content">
-                <p className="option-title">{props.filterCategory.name}</p>
-                <p>+</p>
-            </div>
-            <form className="filter-radio-form">
-            {
-                props.filterCategory.options.map(opt =>
-                    <FilterRadioLink
-                        key={opt.id} 
-                        radioOption={opt} />
-                )
-            }
-            </form>
-            <div className="filter-option-divider" />
-        </div>
-    );
+interface OptionState {
+    showOptions: boolean
 }
 
-export default FilterOptionView;
+export default class FilterOptionView extends React.Component<Props, OptionState> {
+    constructor(props: Props) {
+        super(props);
+        this.state = {
+            showOptions: false
+        }
+    }
+
+    public toggleOptions = () => {
+        this.setState({
+            showOptions: !this.state.showOptions
+        })
+    }
+
+    public render() {
+        return (
+            <div className="filter-option-view">
+                <div className="filter-option-content" onClick={this.toggleOptions}>
+                    <p className="option-title">{this.props.filterCategory.name}</p>
+                    <p>{this.state.showOptions ? '-' : '+'}</p>
+                </div>
+                { this.state.showOptions && 
+                    <form className="filter-radio-form">
+                    {
+                        this.props.filterCategory.options.map(opt =>
+                            <FilterRadioLink
+                                key={opt.id} 
+                                radioOption={opt} />
+                        )
+                    }
+                    </form>
+                }
+                <div className="filter-option-divider" />
+        </div>
+        )
+    }
+}
