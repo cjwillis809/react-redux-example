@@ -6,6 +6,7 @@ import ProductCategoryView from '../components/ProductCategoryView/ProductCatego
 import {mockCatalog} from '../mock/MockProducts';
 import ProductCategory from '../models/ProductCategory';
 import { State } from "../reducers/";
+import store from '../store';
 
 export interface ProductCategoriesProps {
     productCategories: ProductCategory[],
@@ -22,7 +23,7 @@ const mapStateToProps = (state: State) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
     onViewBtnClick: (categoryId: number) => {
-        dispatch(viewAllProducts(categoryId, true))
+        dispatch(viewAllProducts(categoryId, !store.getState().viewingAll.viewingAll))
         dispatch(setCategoryFilter(categoryId))
     }
 });
