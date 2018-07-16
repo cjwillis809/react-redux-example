@@ -12,13 +12,13 @@ interface LinkProps {
 const mapStateToProps = (state: State, ownProps: LinkProps) => ({
     radioOption: {
         id: ownProps.radioOption.id,
-        selected: state.categoryFilter.categoryFilter === ownProps.radioOption.title,
+        selected: state.categoryFilter.categoryFilter === ownProps.radioOption.id,
         title: ownProps.radioOption.title
     }
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    onRadioChange: (chosenFilter: string) => dispatch(setCategoryFilter(chosenFilter))
+    onRadioChange: (chosenFilter: number) => dispatch(setCategoryFilter(chosenFilter))
 })
 
 export const FilterRadioLink = connect(

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
+import { setCategoryFilter } from '../actions/FilterActions';
 import { viewAllProducts } from '../actions/ProductActions';
 import ProductCategoryView from '../components/ProductCategoryView/ProductCategoryView';
 import {mockCatalog} from '../mock/MockProducts';
@@ -11,8 +12,8 @@ export interface ProductCategoriesProps {
     onViewBtnClick: (catId: number) => void
 }
 
-const getVisibleCategory = (filter: string) => {
-    return filter === "All" ? mockCatalog : mockCatalog.filter(c => c.name === filter);
+const getVisibleCategory = (categoryId: number) => {
+    return categoryId === -1 ? mockCatalog : mockCatalog.filter(c => c.id === categoryId);
 };
 
 const mapStateToProps = (state: State) => ({
@@ -20,7 +21,10 @@ const mapStateToProps = (state: State) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    onViewBtnClick: (categoryId: number) => dispatch(viewAllProducts(categoryId))
+    onViewBtnClick: (categoryId: number) => {
+        dispatch(viewAllProducts(categoryId, true))
+        dispatch(setCategoryFilter(categoryId))
+    }
 });
 
 export const VisibleProductList = connect(mapStateToProps, mapDispatchToProps)(ProductCategoryView) 

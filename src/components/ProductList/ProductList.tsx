@@ -9,8 +9,10 @@ interface ProductListProps {
 }
 
 const ProductList = (props: ProductListProps) => {
-    const handleClick = () => props.onViewBtnClick(props.productCategory.id);
-    
+    const handleClick = () => {
+        props.onViewBtnClick(props.productCategory.id);
+    }
+
     return (
         <div className="list-view">
             <div className="list-header">

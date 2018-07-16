@@ -6,22 +6,22 @@ export const mockFilters: FilterCategory[] = [
       name: "Product Categories",
       options: [
           {
-            id: 0,
+            id: -1,
             selected: false,
             title: "All"
           },
           {
-            id: 1,
+            id: 0,
             selected: false,
             title: "Acoustical Panels"
           },
           {
-            id: 2,
+            id: 1,
             selected: false,
             title: "Metal Panels"
           },
           {
-            id: 3,
+            id: 2,
             selected: false,
             title: "Retail Panels"
           }

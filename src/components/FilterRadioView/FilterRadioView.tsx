@@ -3,19 +3,19 @@ import RadioOption from '../../models/RadioOption';
 
 interface RadioViewProps {
     radioOption: RadioOption,
-    onRadioChange: (value: string) => void
+    onRadioChange: (value: number) => void
 }
 
 const FilterRadioView = (props: RadioViewProps) => {
     const {radioOption, onRadioChange} = props
     
-    const handleChange = () => onRadioChange(radioOption.title)
+    const handleChange = () => onRadioChange(radioOption.id)
 
     return (
         <label>
             <input 
                 type="radio"
-                value={radioOption.title}
+                value={radioOption.id}
                 checked={radioOption.selected}
                 onChange={handleChange}/>
             {radioOption.title}
