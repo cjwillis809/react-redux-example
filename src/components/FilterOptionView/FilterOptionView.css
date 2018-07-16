@@ -1,12 +1,12 @@
 .filter-option-content {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
 }
 .filter-option-divider {
     height: 1px;
     border: 0;
     border-top: 2px solid rgb(199, 202, 202);
-    margin: 1em 0;
     padding: 0;
 }
 

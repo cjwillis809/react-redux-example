@@ -9,7 +9,8 @@ const ProductCategoryView = (props: ProductCategoriesProps) => {
                 props.productCategories.map(pc => 
                     <ProductList
                         key={pc.id} 
-                        productCategory={pc}/>
+                        productCategory={pc}
+                        onViewBtnClick={props.onViewBtnClick}/>
                 )
             }
         </div>

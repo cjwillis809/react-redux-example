@@ -3,16 +3,19 @@ import ProductCategory from '../../models/ProductCategory';
 import ProductTile from '../ProductTile/ProductTile';
 import './ProductList.css';
 
-interface Props {
-    productCategory: ProductCategory
+interface ProductListProps {
+    productCategory: ProductCategory,
+    onViewBtnClick: (catId: number) => void
 }
 
-const ProductList = (props: Props) => {
+const ProductList = (props: ProductListProps) => {
+    const handleClick = () => props.onViewBtnClick(props.productCategory.id);
+    
     return (
         <div className="list-view">
             <div className="list-header">
                 <p className="list-header-title">{props.productCategory.name}</p>
-                <button className="list-view-all-btn">VIEW ALL</button>
+                <button className="list-view-all-btn" onClick={handleClick}>VIEW ALL</button>
             </div>
             <div className="list-content">
             {
