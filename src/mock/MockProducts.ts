@@ -21,7 +21,13 @@ export const mockCategory: ProductCategory = {
             productDescription: "Description",
             productTitle: "USG Halcyon Planks & Large Size Acousitcal Panels",
             tileThumbnail: "http://worldartsme.com/images/light-green-square-clipart-1.jpg"
-        }
+        },
+        {
+          id: 10,
+          productDescription: "Description",
+          productTitle: "USG Halcyon Planks & Large Size Acousitcal Panels",
+          tileThumbnail: "http://worldartsme.com/images/light-green-square-clipart-1.jpg"
+      }
     ]
   }
 
