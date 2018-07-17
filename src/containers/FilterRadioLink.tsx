@@ -3,13 +3,13 @@ import { Dispatch } from "redux";
 import { setCategoryFilter } from "../actions/FilterActions";
 import FitlerRadioView from "../components/FilterRadioView/FilterRadioView";
 import RadioOption from "../models/RadioOption";
-import { State } from "../reducers/";
+import { AppState } from "../reducers/";
 
 interface LinkProps {
     radioOption: RadioOption
 }
 
-const mapStateToProps = (state: State, ownProps: LinkProps) => ({
+const mapStateToProps = (state: AppState, ownProps: LinkProps) => ({
     radioOption: {
         id: ownProps.radioOption.id,
         selected: state.categoryFilter.categoryFilter === ownProps.radioOption.id,

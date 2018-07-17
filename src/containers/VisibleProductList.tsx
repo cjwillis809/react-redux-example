@@ -5,7 +5,7 @@ import { viewAllProducts } from '../actions/ProductActions';
 import ProductCategoryView from '../components/ProductCategoryView/ProductCategoryView';
 import {mockCatalog} from '../mock/MockProducts';
 import ProductCategory from '../models/ProductCategory';
-import { State } from "../reducers/";
+import { AppState } from "../reducers/";
 import store from '../store';
 
 export interface ProductCategoriesProps {
@@ -17,7 +17,7 @@ const getVisibleCategory = (categoryId: number) => {
     return categoryId === -1 ? mockCatalog : mockCatalog.filter(c => c.id === categoryId);
 };
 
-const mapStateToProps = (state: State) => ({
+const mapStateToProps = (state: AppState) => ({
     productCategories: getVisibleCategory(state.categoryFilter.categoryFilter)
 });
 
