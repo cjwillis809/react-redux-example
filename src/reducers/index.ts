@@ -9,11 +9,11 @@ export interface AppState {
 }
 
 export const initialState: AppState = {
-    categoryFilter: filterState.initialState,
+    categoryFilter: filterState.filterInitialState,
     viewingAll: productViewState.initialState
 }
 
 export const reducer = combineReducers<AppState>({
-    categoryFilter: filterState.reducer,
+    categoryFilter: filterState.filterReducer,
     viewingAll: productViewState.reducer
 })

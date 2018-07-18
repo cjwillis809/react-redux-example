@@ -4,11 +4,11 @@ export interface FilterState {
     categoryFilter: number
 }
 
-export const initialState: FilterState = {
+export const filterInitialState: FilterState = {
     categoryFilter: -1
 }
 
-export function reducer(state: FilterState = initialState, action: Action) {
+export function filterReducer(state: FilterState = filterInitialState, action: Action) {
     switch(action.type) {
         case FilterActionTypes.SET_CATEGORY_FILTER:
             return Object.assign({}, state, {
